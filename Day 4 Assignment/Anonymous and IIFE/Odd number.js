@@ -10,11 +10,22 @@ let odd = function(value){
 }
 
 //IIFE
-let Array1=[1,2,3,4];
+(function(){
+    let Array1=[1,2,3,4];
 for(let i=0; i<Array1.length;i++){
     if(Array1[i] % 2 !== 0){
-        (function(){
         console.log(Array1[i]);
-        })()
     }
+    }
+})();
+
+//Arrow
+let odd = (values) =>{
+    let Array1=[1,2,3,4];
+for(let i=0; i<Array1.length;i++){
+    if(Array1[i] % 2 !== 0){
+        console.log(Array1[i]);
+            }
+}
 };
+odd();
