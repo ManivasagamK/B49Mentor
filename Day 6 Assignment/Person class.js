@@ -1,18 +1,16 @@
-var person1 = {
-    firstname : "Manivasagam",
-    lastName : "K",
-    Age: 25,
-    Gender: "Male",
-    Native: "Tirupur",
-    Degree: "M.Sc. Agri",
-    get: function(){
-        console.log(`firstname is ${this.firstname}`);
-        console.log(`lastName is ${this.lastName}`);
-        console.log(`Age is ${this.Age}`);
-        console.log(`Gender is ${this.Gender}`);
-        console.log(`Native is ${this.Native}`);
-        console.log(`Degree is ${this.Degree}`);
+//Person class to store data
 
+class Person {
+    constructor(name, Age, Gender){
+        this.name = name;
+        this.Age = Age; 
+        this.Gender = Gender;
+    }
+    
+    showDetails(){
+        console.log(`Name of person is ${this.name}. His age is ${this.Age} and the gender is ${this.Gender}`);
     }
 }
-person1.get();
+
+const result = new Person("Mani", 26, "male");
+result.showDetails();
