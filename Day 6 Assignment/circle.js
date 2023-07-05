@@ -6,8 +6,20 @@ class Circle{
     getRadius(){
         return this.radius;
     }
+    get Radius(){
+        return this.radius;
+    }
+    set Radius(num){
+        this.radius=num;
+    }
     getColor(){
         return this.color;
+    }
+    get Color(){
+        return this.color;
+    }
+    set Color(string){
+        this.color=string;
     }
     getArea(){
         let Area= Math.PI *Math.pow(2,this.radius);
@@ -24,3 +36,9 @@ console.log(`
             ${obj.getColor()},
             ${obj.getArea().toFixed(2)},
             ${obj.getCircum().toFixed(2)}.`);
+console.log(`before: `, obj.Radius);
+obj.Radius = 2.3;
+console.log(`After: `, obj.Radius);
+console.log(`before: `,obj.Color);
+obj.Color= "blue";
+console.log(`After: `, obj.Color);
