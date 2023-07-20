@@ -8,15 +8,17 @@
     <link rel="stylesheet" href="example.css" />
   </head>
   <body>
+    <h1 id="title"> Calculator </h1>
+    <p id="description"> this is DOM Calculator</p>
     <main id="main">
       <form id="calc_form">
         <header class="calc_header">
           <input
             type="text"
             disabled
-            id="output"
             class="calc_output"
             value="0"
+            id="result"
           />
         </header>
         <footer class="calc_footer">
@@ -26,6 +28,7 @@
               type="reset"
               value="clear"
               class="btn btn-dark-red"
+              id="clear"
             >
               AC
             </button>
@@ -35,7 +38,7 @@
             <button data-type="operator" value="%" class="btn btn-grey">
               %
             </button>
-            <button data-type="operator" value="/" class="btn btn-orange">
+            <button data-type="operator" value="/" class="btn btn-orange" id="divide">
               /
             </button>
           </div>
@@ -43,41 +46,41 @@
             <button data-type="operand" value="7" class="btn btn-dark-grey" id="7">
               7
             </button>
-            <button data-type="operand" value="8" class="btn btn-dark-grey">
+            <button data-type="operand" value="8" class="btn btn-dark-grey" id="8">
               8
             </button>
-            <button data-type="operand" value="9" class="btn btn-dark-grey">
+            <button data-type="operand" value="9" class="btn btn-dark-grey" id="9">
               9
             </button>
-            <button data-type="operator" value="*" class="btn btn-orange">
+            <button id="multiply"data-type="operator" value="*" class="btn btn-orange">
               *
             </button>
           </div>
           <div class="btn_group">
-            <button data-type="operand" value="4" class="btn btn-dark-grey">
+            <button data-type="operand" value="4" class="btn btn-dark-grey" id="4">
               4
             </button>
-            <button data-type="operand" value="5" class="btn btn-dark-grey">
+            <button data-type="operand" value="5" class="btn btn-dark-grey" id="5">
               5
             </button>
-            <button data-type="operand" value="6" class="btn btn-dark-grey">
+            <button data-type="operand" value="6" class="btn btn-dark-grey" id="6">
               6
             </button>
-            <button data-type="operator" value="-" class="btn btn-orange">
+            <button id="subtract"data-type="operator" value="-" class="btn btn-orange">
               -
             </button>
           </div>
           <div class="btn_group">
-            <button data-type="operand" value="1" class="btn btn-dark-grey">
+            <button data-type="operand" value="1" class="btn btn-dark-grey" id="1">
               1
             </button>
-            <button data-type="operand" value="2" class="btn btn-dark-grey">
+            <button data-type="operand" value="2" class="btn btn-dark-grey" id="2">
               2
             </button>
-            <button data-type="operand" value="3" class="btn btn-dark-grey">
+            <button data-type="operand" value="3" class="btn btn-dark-grey" id="3">
               3
             </button>
-            <button data-type="operator" value="+" class="btn btn-orange">
+            <button id="add" data-type="operator" value="+" class="btn btn-orange">
               +
             </button>
           </div>
@@ -86,13 +89,14 @@
               data-type="operand"
               value="0"
               class="btn btn-grow btn-dark-grey"
+              id="0"
             >
               0
             </button>
-            <button data-type="operand" value="." class="btn btn-dark-grey">
+            <button data-type="operand" value="." class="btn btn-dark-grey" >
               .
             </button>
-            <button value="=" data-type="operator" class="btn btn-orange">
+            <button value="=" data-type="operator" class="btn btn-orange" id="equal">
               =
             </button>
           </div>
