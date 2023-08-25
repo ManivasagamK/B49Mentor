@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: hsl(180, 39%, 75%);
+    max-width: 500vw;
+    max-height: 500vh;
+    float: left;
+    padding: 10px;
+}
+.card {
+    background-color: #f3dfbe;
+    max-width: 300px;
+    margin: 5px;
+    font-family: 'Caveat', cursive;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+p strong{
+    font-family: 'Comic Neue', cursive;
+    font-size: large;
+    font-weight: bolder;
+}
