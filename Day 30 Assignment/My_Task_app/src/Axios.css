@@ -6,20 +6,70 @@
     background: hsl(180, 39%, 75%);
     max-width: 500vw;
     max-height: 500vh;
-    float: left;
+   
     padding: 10px;
+}
+.main{
+    margin-top: 20px;
 }
 .card {
     background-color: #f3dfbe;
-    max-width: 300px;
+    max-width: 500vw;
+    max-height: 500vh;
     margin: 5px;
     font-family: 'Caveat', cursive;
     font-size: larger;
     font-weight: bolder;
+    width: 400px;
+    height: fit-content;
 }
 
 p strong{
     font-family: 'Comic Neue', cursive;
     font-size: large;
     font-weight: bolder;
+}
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    padding: 2px;
+    box-sizing: border-box;
+    position: relative;
+    max-width: 100vw;
+    width: 600px;
+    background: hsl(57, 63%, 78%);
+    margin: 5px;
+    align-items: center;
+    height: fit-content;
+   text-align: left;
+   justify-content: left;
+   float: none;
+   
+}
+input{
+    height: fit-content;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    outline-color: orange;
+    
+}
+.input {
+    display: block;
+    
+}
+.input label{
+    margin: 5px 10px 5px 0;
+    width: 100px;
+}
+button{
+    height: fit-content;
+    width: fit-content;
+    color: black;
+    background: rgb(207, 136, 49);
+    display: block;
+}
+button:hover {
+    background-color: royalblue;
 }
