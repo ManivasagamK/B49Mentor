@@ -3,7 +3,7 @@ import axios from 'axios'
 import './Axios.css'
 function Axios() {
     const [post, setPost] = useState([]);
-    console.log(post);
+    //console.log(post);
     
     useEffect(() => {
       axios.get("https://jsonplaceholder.typicode.com/users").then((data) => {
@@ -12,25 +12,39 @@ function Axios() {
       });
     }, []);
     
-  // console.log(post)
+  console.log(post)
   const handleAdd=(event)=>{
     event.preventDefault();
     let nameInput = document.getElementById("name");
     let userInput = document.getElementById("username");
     let companyInput = document.getElementById("companyname");
     let specInput = document.getElementById("specialisation");
+    let cityInput = document.getElementById("cityname");
+    let phoneInput = document.getElementById("phone");
+    let emailInput = document.getElementById("email");
+    
+    let name = nameInput.value.trim();
+    let username = userInput.value.trim();
+    let catchPhrase = specInput.value.trim();
+    let companyname = companyInput.value.trim();
+    let city = cityInput.value.trim();
+    let phone = phoneInput.value.trim();
+    let email = emailInput.value.trim();
 
+    setPost([...post, {name, username,companyname, catchPhrase,city,phone,email}]);
+    
   }
   const handleEdit=(item,index)=>{
 
   }
-  const handleDelete=(item,i)=>{
-    post.splice(i,1);
+  const handleDelete=(i)=>{
+    // setPost(post.filter((post)=>{return post.id != i}))
+  
   }
     return (
         <>
         <h1>Axios</h1>
-        <div className='form'>
+        <form className='form'>
         <div className="input">
         <label htmlFor='name'>Name:</label>
         <input type='text' id='name'/>
@@ -69,7 +83,7 @@ function Axios() {
         </div>
         <br/>
         <button type='submit' onSubmit={handleAdd}>Add</button>
-        </div>
+        </form>
       <div className='main'>
         
         {post.map((item, i) => {
@@ -78,13 +92,13 @@ function Axios() {
             <div className='card'>
               <p><strong>Name:</strong>{` `+item.name}</p>
               <p><strong>UserName:</strong>{` `+ item.username}</p>
-              <p><strong>Specialisation:</strong>{` `+item.company.catchPhrase}</p>
-              <p><strong>CompanyName:</strong>{` `+ item.company.name}</p>
-              <p><strong>CityName:</strong>{` `+item.address.city}</p>
+              <p><strong>Specialisation:</strong>{` `+((item.company.catchPhrase)||(item.catchPhrase))}</p>
+              <p><strong>CompanyName:</strong>{` `+ (item.company.name || item.companyname)}</p>
+              <p><strong>CityName:</strong>{` `+(item.address.city || item.city)}</p>
               <p><strong>PhoneNo:</strong>{` `+ item.phone}</p>
               <p><strong>Email-Id:</strong>{` `+ item.email}</p>
               <button className='btn btn-info' onClick={handleEdit}><strong>Edit</strong></button>
-              <button className='btn btn-danger' onClick={handleDelete}><strong>Delete</strong></button>
+              <button className='btn btn-danger' onClick={handleDelete(i)}><strong>Delete</strong></button>
             
               </div>
         </div>
