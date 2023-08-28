@@ -13,8 +13,8 @@ function Axios() {
     }, []);
     
   console.log(post)
-  const handleAdd=()=>{
-    
+  const handleAdd=(event)=>{
+    event.preventDefault();
     let nameInput = document.getElementById("name");
     let userInput = document.getElementById("username");
     let companyInput = document.getElementById("companyname");
@@ -24,17 +24,68 @@ function Axios() {
     let emailInput = document.getElementById("email");
     
     let name = nameInput.value.trim();
-    console.log(name);
+    //console.log(name);
     let username = userInput.value.trim();
     let catchPhrase = specInput.value.trim();
     let companyname = companyInput.value.trim();
     let city = cityInput.value.trim();
     let phone = phoneInput.value.trim();
     let email = emailInput.value.trim();
-
-    setPost([...post, {name, username,companyname, catchPhrase,city,phone,email}]);
+    const newdata ={name, username,companyname, catchPhrase,city,phone,email}
+    setPost((post)=>[...post, newdata]);
     
   }
+//   const [inputValues, setInputValues] = useState({
+//     name: '',
+//     username: '',
+//     companyname: '',
+//     catchPhrase: '',
+//     city: '',
+//     phone: '',
+//     email: '',
+//   });
+
+
+
+// <input
+//   type='text'
+//   id='name'
+//   value={inputValues.name}
+//   onChange={handleInputChange}
+//   placeholder='Name'
+// />
+
+// const handleInputChange = (event) => {
+//     const { id, value } = event.target;
+//     setInputValues((prevValues) => ({
+//       ...prevValues,
+//       [id]: value,
+//     }));
+//   };
+
+
+// const newData = {
+//       name: inputValues.name.trim(),
+//       username: inputValues.username.trim(),
+//       companyname: inputValues.companyname.trim(),
+//       catchPhrase: inputValues.catchPhrase.trim(),
+//       city: inputValues.city.trim(),
+//       phone: inputValues.phone.trim(),
+//       email: inputValues.email.trim(),
+//     };
+
+//     setPost((prevPosts) => [...prevPosts, newData]);
+//     setInputValues({
+//       name: '',
+//       username: '',
+//       companyname: '',
+//       catchPhrase: '',
+//       city: '',
+//       phone: '',
+//       email: '',
+//     });
+//   };
+
   const handleEdit=(item,index)=>{
 
   }
