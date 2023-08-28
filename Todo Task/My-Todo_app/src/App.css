@@ -40,3 +40,38 @@
 .read-the-docs {
   color: #888;
 }
+.todo-list{
+background-color: rgb(202, 238, 103);
+display: block;
+width:500px;
+text-align: left;
+font-family: 'Caveat', cursive;
+
+}
+.todo-list button{
+  position: fixed-right;
+  float:right;
+  margin: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  width:60px;
+  text-overflow: ellipsis;
+}
+
+button {
+  margin: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  height: fit-content;
+}
+button:hover{
+  background-color: aqua;
+}
+.App{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: rgb(252, 211, 135);
+  width: 100vw;
+  height: 100vh;
+  font-size: x-large;
+}
