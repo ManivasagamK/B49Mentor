@@ -13,8 +13,8 @@ function Axios() {
     }, []);
     
   console.log(post)
-  const handleAdd=(event)=>{
-    event.preventDefault();
+  const handleAdd=()=>{
+    
     let nameInput = document.getElementById("name");
     let userInput = document.getElementById("username");
     let companyInput = document.getElementById("companyname");
@@ -24,6 +24,7 @@ function Axios() {
     let emailInput = document.getElementById("email");
     
     let name = nameInput.value.trim();
+    console.log(name);
     let username = userInput.value.trim();
     let catchPhrase = specInput.value.trim();
     let companyname = companyInput.value.trim();
@@ -47,7 +48,7 @@ function Axios() {
         <form className='form'>
         <div className="input">
         <label htmlFor='name'>Name:</label>
-        <input type='text' id='name'/>
+        <input type='text' id='name' />
         </div>
         <br/>
         {/* <label htmlFor='name'>Name:</label>
