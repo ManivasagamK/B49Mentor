@@ -6,7 +6,6 @@
     background: hsl(180, 39%, 75%);
     max-width: 500vw;
     max-height: 500vh;
-   
     padding: 10px;
 }
 .main{
@@ -22,6 +21,7 @@
     font-weight: bolder;
     width: 400px;
     height: fit-content;
+    border-radius: 25px;
 }
 
 p strong{
@@ -43,8 +43,7 @@ p strong{
     align-items: center;
     height: fit-content;
    text-align: left;
-   justify-content: left;
-   float: none;
+   justify-content: center;
    
 }
 input{
