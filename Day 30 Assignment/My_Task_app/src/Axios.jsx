@@ -35,6 +35,7 @@ function Axios() {
   //   setPost((post)=>[...post, newdata]);
     
   // }
+  
   const [inputValues, setInputValues] = useState({
     name: '',
     username: '',
@@ -101,7 +102,7 @@ const handlesubmit=(event)=>{
         <form className='form' onSubmit={handlesubmit}>
         <div className="input">
         <label htmlFor='name'>Name:</label>
-        <input type='text' id='name' value={inputValues.name} onChange={handleInputChange} />
+        <input type='text' id='name' value={inputValues.name} onChange={(event)=>handleInputChange(event)} />
         </div>
         <br/>
         {/* <label htmlFor='name'>Name:</label>
@@ -141,14 +142,14 @@ const handlesubmit=(event)=>{
       <div className='main'>
         
         {post.map((item, i) => {
-            return(
+            
         <div key={i} className='container'>
             <div className='card'>
               <p><strong>Name:</strong>{` `+item.name}</p>
               <p><strong>UserName:</strong>{` `+ item.username}</p>
-              <p><strong>Specialisation:</strong>{` `+(item.company.catchPhrase || item.specialisation)}</p>
-              <p><strong>CompanyName:</strong>{` `+ (item.company.name || item.companyname)}</p>
-              <p><strong>CityName:</strong>{` `+(item.address.city || item.city)}</p>
+              <p><strong>Specialisation:</strong>{` `+(item.company?.catchPhrase || item.specialisation)}</p>
+              <p><strong>CompanyName:</strong>{` `+ (item.company?.name || item.companyname)}</p>
+              <p><strong>CityName:</strong>{` `+(item.address?.city || item.city)}</p>
               <p><strong>PhoneNo:</strong>{` `+ item.phone}</p>
               <p><strong>Email-Id:</strong>{` `+ item.email}</p>
               <button className='btn btn-info' onClick={handleEdit}><strong>Edit</strong></button>
@@ -156,7 +157,7 @@ const handlesubmit=(event)=>{
             
               </div>
         </div>
-            )   
+             
         })}
       </div>
       </>
