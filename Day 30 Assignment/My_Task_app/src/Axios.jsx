@@ -3,89 +3,91 @@ import axios from 'axios'
 import './Axios.css'
 function Axios() {
     const [post, setPost] = useState([]);
-    //console.log(post);
+    console.log(post);
     
     useEffect(() => {
       axios.get("https://jsonplaceholder.typicode.com/users").then((data) => {
-        console.log(data);
-        setPost(data.data);
+         console.log(data.data);
+        setPost(data?.data);
       });
     }, []);
     
-  console.log(post)
-  const handleAdd=(event)=>{
-    event.preventDefault();
-    let nameInput = document.getElementById("name");
-    let userInput = document.getElementById("username");
-    let companyInput = document.getElementById("companyname");
-    let specInput = document.getElementById("specialisation");
-    let cityInput = document.getElementById("cityname");
-    let phoneInput = document.getElementById("phone");
-    let emailInput = document.getElementById("email");
+  // console.log(post)
+  // const handleAdd=(event)=>{
+  //   event.preventDefault();
+  //   let nameInput = document.getElementById("name");
+  //   let userInput = document.getElementById("username");
+  //   let companyInput = document.getElementById("companyname");
+  //   let specInput = document.getElementById("specialisation");
+  //   let cityInput = document.getElementById("cityname");
+  //   let phoneInput = document.getElementById("phone");
+  //   let emailInput = document.getElementById("email");
     
-    let name = nameInput.value.trim();
-    //console.log(name);
-    let username = userInput.value.trim();
-    let catchPhrase = specInput.value.trim();
-    let companyname = companyInput.value.trim();
-    let city = cityInput.value.trim();
-    let phone = phoneInput.value.trim();
-    let email = emailInput.value.trim();
-    const newdata ={name, username,companyname, catchPhrase,city,phone,email}
-    setPost((post)=>[...post, newdata]);
+  //   let name = nameInput.value.trim();
+  //   //console.log(name);
+  //   let username = userInput.value.trim();
+  //   let catchPhrase = specInput.value.trim();
+  //   let companyname = companyInput.value.trim();
+  //   let city = cityInput.value.trim();
+  //   let phone = phoneInput.value.trim();
+  //   let email = emailInput.value.trim();
+  //   const newdata ={name, username,companyname, catchPhrase,city,phone,email}
+  //   setPost((post)=>[...post, newdata]);
     
+  // }
+  const [inputValues, setInputValues] = useState({
+    name: '',
+    username: '',
+    companyname: '',
+    specialisation: '',
+    city: '',
+    phone: '',
+    email: '',
+  });
+
+
+
+{/* <input
+  type='text'
+  id='name'
+  value={inputValues.name}
+  onChange={handleInputChange}
+  placeholder='Name'
+/> */}
+
+const handleInputChange = (event) => {
+    const { id, value } = event.target;
+    setInputValues((prevValues) => ({
+      ...prevValues,
+      [id]: value,
+    }));
+ 
+
   }
-//   const [inputValues, setInputValues] = useState({
-//     name: '',
-//     username: '',
-//     companyname: '',
-//     catchPhrase: '',
-//     city: '',
-//     phone: '',
-//     email: '',
-//   });
+const newData = {
+      name: inputValues.name.trim(),
+      username: inputValues.username.trim(),
+      companyname: inputValues.companyname.trim(),
+      specialisation: inputValues.specialisation.trim(),
+      city: inputValues.city.trim(),
+      phone: inputValues.phone.trim(),
+      email: inputValues.email.trim(),
+    };
+const handlesubmit=(event)=>{
+  event.preventDefault();
 
-
-
-// <input
-//   type='text'
-//   id='name'
-//   value={inputValues.name}
-//   onChange={handleInputChange}
-//   placeholder='Name'
-// />
-
-// const handleInputChange = (event) => {
-//     const { id, value } = event.target;
-//     setInputValues((prevValues) => ({
-//       ...prevValues,
-//       [id]: value,
-//     }));
-//   };
-
-
-// const newData = {
-//       name: inputValues.name.trim(),
-//       username: inputValues.username.trim(),
-//       companyname: inputValues.companyname.trim(),
-//       catchPhrase: inputValues.catchPhrase.trim(),
-//       city: inputValues.city.trim(),
-//       phone: inputValues.phone.trim(),
-//       email: inputValues.email.trim(),
-//     };
-
-//     setPost((prevPosts) => [...prevPosts, newData]);
-//     setInputValues({
-//       name: '',
-//       username: '',
-//       companyname: '',
-//       catchPhrase: '',
-//       city: '',
-//       phone: '',
-//       email: '',
-//     });
-//   };
-
+    setPost((prevPosts) => [...prevPosts, newData]);
+    setInputValues({
+      name: '',
+      username: '',
+      companyname: '',
+      specialisation: '',
+      city: '',
+      phone: '',
+      email: '',
+    });
+  
+  };
   const handleEdit=(item,index)=>{
 
   }
@@ -96,45 +98,45 @@ function Axios() {
     return (
         <>
         <h1>Axios</h1>
-        <form className='form'>
+        <form className='form' onSubmit={handlesubmit}>
         <div className="input">
         <label htmlFor='name'>Name:</label>
-        <input type='text' id='name' />
+        <input type='text' id='name' value={inputValues.name} onChange={handleInputChange} />
         </div>
         <br/>
         {/* <label htmlFor='name'>Name:</label>
         <input type='text' id='name'/> */}
         <div className="input">
         <label htmlFor='username'>UserName:</label>
-        <input type='text' id='username'/>
+        <input type='text' id='username' value={inputValues.username} onChange={handleInputChange}/>
         </div>
         <br/>
         <div className="input">
         <label htmlFor='companyname'>CompanyName:</label>
-        <input type='text' id='companyname'/>
+        <input type='text' id='companyname' value={inputValues.companyname} onChange={handleInputChange}/>
         </div>
         <br/>
         <div className="input">
         <label htmlFor='specialisation'>Specialisation:</label>
-        <input type='text' id='specialisation'/>
+        <input type='text' id='specialisation' value={inputValues.specialisation} onChange={handleInputChange}/>
         </div>
         <br/>
         <div className="input">
         <label htmlFor='cityname'>CityName:</label>
-        <input type='text' id='cityname'/>
+        <input type='text' id='cityname' value={inputValues.city} onChange={handleInputChange}/>
         </div>
         <br/>
         <div className="input">
         <label htmlFor='phone'>PhoneNo:</label>
-        <input type='text' id='phone'/>
+        <input type='text' id='phone' value={inputValues.phone} onChange={handleInputChange}/>
         </div>
         <br/>
         <div className="input">
         <label htmlFor='email'>Email-Id:</label>
-        <input type='text' id='email'/>
+        <input type='text' id='email' value={inputValues.email} onChange={handleInputChange}/>
         </div>
         <br/>
-        <button type='submit' onSubmit={handleAdd}>Add</button>
+        <button type='submit'>Add</button>
         </form>
       <div className='main'>
         
@@ -144,7 +146,7 @@ function Axios() {
             <div className='card'>
               <p><strong>Name:</strong>{` `+item.name}</p>
               <p><strong>UserName:</strong>{` `+ item.username}</p>
-              <p><strong>Specialisation:</strong>{` `+((item.company.catchPhrase)||(item.catchPhrase))}</p>
+              <p><strong>Specialisation:</strong>{` `+(item.company.catchPhrase || item.specialisation)}</p>
               <p><strong>CompanyName:</strong>{` `+ (item.company.name || item.companyname)}</p>
               <p><strong>CityName:</strong>{` `+(item.address.city || item.city)}</p>
               <p><strong>PhoneNo:</strong>{` `+ item.phone}</p>
