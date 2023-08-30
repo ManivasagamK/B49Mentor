@@ -141,7 +141,7 @@ const handlesubmit=(event)=>{
         </form>
       <div className='main'>
         
-        {post.map((item, i) => {
+        {post.map((item, i) => (
             
         <div key={i} className='container'>
             <div className='card'>
@@ -158,7 +158,7 @@ const handlesubmit=(event)=>{
               </div>
         </div>
              
-        })}
+        ))}
       </div>
       </>
     );

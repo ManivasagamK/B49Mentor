@@ -1,0 +1,11 @@
+{
+  "fruits": [
+    {
+      "id": 1,
+      "name":"apples",
+      "quantity":"5",
+      "price":"2000",
+      "imgUrl":"https://www.glozine.com/wp-content/uploads/2014/07/exotic-fruits-hd-wallpapers.jpg"
+    }
+  ]
+}

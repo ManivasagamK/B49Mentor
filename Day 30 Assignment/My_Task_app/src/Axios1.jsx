@@ -60,7 +60,7 @@ console.log(formData)
         companyname:(item.company.name || item.companyname),
         city:(item.address.city || item.city),
         phone:item.phone,
-        email: item.email  });
+        email: item.email});
     setEditingId(item.id);
   };
 
