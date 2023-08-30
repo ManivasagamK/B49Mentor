@@ -1,19 +1,16 @@
 {
-  "posts": [
+  "book": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "id": "",
+      "title": "",
+      "author": {
+        "name":"",
+        "birthdate":"",
+        "biography":""
+      },
+      "ISBNnumber":"",
+      "Publication":""
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
+  
 }
