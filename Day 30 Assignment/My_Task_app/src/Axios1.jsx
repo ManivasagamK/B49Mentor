@@ -11,7 +11,7 @@ name: '',
   specialisation: '',
   city: '',
   phone: '',
-  email: '',});
+  email: ''});
   const [editingId, setEditingId] = useState(null);
 console.log(data)
   useEffect(() => {
@@ -32,11 +32,13 @@ console.log(data)
 
     try {
       if (editingId) {
-        await axios.put(`https://jsonplaceholder.typicode.com/users/${editingId}`, formData);
+        await axios.put(`https://jsonplaceholder.typicode.com/users/${editingId}`, {formData});
+        fetchData();
       } else {
-        await axios.post("https://jsonplaceholder.typicode.com/users", formData);
+        await axios.post(`https://jsonplaceholder.typicode.com/users`, {formData});
+        fetchData();
       }
-      console.log(editingId);
+console.log(editingId);
 console.log(formData)
       setFormData({ name: '',
       username: '',
@@ -46,25 +48,27 @@ console.log(formData)
       phone: '',
       email: '',});
       setEditingId(null);
-      fetchData();
     } catch (error) {
       console.error('Error submitting data:', error);
     }
   };
 
-  const handleEdit = (item) => {
+  const handleEdit = (item,id) => {
+    console.log(id)
     setFormData({ 
         name: item.name, 
         username: item.username, 
-        specialisation:(item.company.catchPhrase || item.specialisation),
-        companyname:(item.company.name || item.companyname),
-        city:(item.address.city || item.city),
+        specialisation:(item.company?.catchPhrase || item.specialisation),
+        companyname:(item.company?.name || item.companyname),
+        city:(item.address?.city || item.city),
         phone:item.phone,
         email: item.email});
-    setEditingId(item.id);
+    setEditingId(id);
   };
 
   const handleDelete = async (id) => {
+    console.log(id);
+
     try {
       await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`);
       fetchData();
@@ -156,19 +160,19 @@ console.log(formData)
         <button type="submit">{editingId ? 'Update' : 'Add'}</button>
       </form>
       <ul>
-        {data.map((item) => (
+        {data.map((item,id) => (
              
            <div key={item.id} className='container'>
            <div className='card'>
              <p><strong>Name:</strong>{` `+item.name}</p>
              <p><strong>UserName:</strong>{` `+ item.username}</p>
-             <p><strong>Specialisation:</strong>{` `+(item.company.catchPhrase || item.specialisation)}</p>
-             <p><strong>CompanyName:</strong>{` `+ (item.company.name || item.companyname)}</p>
-             <p><strong>CityName:</strong>{` `+(item.address.city || item.city)}</p>
+             <p><strong>Specialisation:</strong>{` `+(item.company?.catchPhrase || item.specialisation)}</p>
+             <p><strong>CompanyName:</strong>{` `+ (item.company?.name || item.companyname)}</p>
+             <p><strong>CityName:</strong>{` `+(item.address?.city || item.city)}</p>
              <p><strong>PhoneNo:</strong>{` `+ item.phone}</p>
              <p><strong>Email-Id:</strong>{` `+ item.email}</p>
-            <button className="btn btn-info"onClick={() => handleEdit(item)}>Edit</button>
-            <button className="btn btn-danger"onClick={() => handleDelete(item.id)}>Delete</button>
+            <button className="btn btn-info"onClick={() => handleEdit(item,id)}>Edit</button>
+            <button className="btn btn-danger"onClick={() => handleDelete(item,id)}>Delete</button>
             </div>
         </div>
           

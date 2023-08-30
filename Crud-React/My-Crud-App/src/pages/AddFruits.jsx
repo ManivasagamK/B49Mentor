@@ -27,7 +27,25 @@ function AddFruits() {
     <>
     <legend>Create</legend>
     <Form>
-        <Form.Group className='mb-3' controlId='formName'></Form.Group>
+        <Form.Group className='mb-3' controlId='formName'>
+          <Form.Label>Name</Form.Label>
+          <Form.Control type='text' ref={fruitName}/>
+        </Form.Group>
+        <Form.Group className='mb-3' controlId='formQuantity'>
+          <Form.Label>Quantity(kg)</Form.Label>
+          <Form.Control type='number' ref={quantity}/>
+        </Form.Group>
+        <Form.Group className='mb-3' controlId='formPrice'>
+          <Form.Label>Price</Form.Label>
+          <Form.Control type='number' ref={price}/>
+        </Form.Group>
+        <Form.Group className='mb-3' controlId='formImageUrl'>
+          <Form.Label>ImgUrl</Form.Label>
+          <Form.Control type='number' ref={imgUrl}/>
+        </Form.Group>
+        <Button variant='primary' type='button' onClick={addFruitHandler}>
+          Add
+        </Button>
     </Form>
     </>
   )

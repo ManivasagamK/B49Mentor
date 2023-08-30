@@ -7,7 +7,7 @@ function Axios() {
     
     useEffect(() => {
       axios.get("https://jsonplaceholder.typicode.com/users").then((data) => {
-         console.log(data.data);
+        //  console.log(data.data);
         setPost(data?.data);
       });
     }, []);
@@ -77,7 +77,7 @@ const newData = {
 const handlesubmit=(event)=>{
   event.preventDefault();
 
-    setPost((prevPosts) => [...prevPosts, newData]);
+    setPost((prevPosts) => [...prevPosts, {newData}]);
     setInputValues({
       name: '',
       username: '',
@@ -89,8 +89,17 @@ const handlesubmit=(event)=>{
     });
   
   };
-  const handleEdit=(item,index)=>{
-
+  const handleEdit=(i)=>{
+    console.log(i)
+      // setPost(post.splice(i,0));
+      setInputValues({
+        name: post[i].name,
+        username: post[i].username, 
+        specialisation:(post[i].company?.catchPhrase || post[i].specialisation),
+        companyname:(post[i].company?.name || post[i].companyname),
+        city:(post[i].address?.city || post[i].city),
+        phone:post[i].phone,
+        email: post[i].email});
   }
   const handleDelete=(i)=>{
     // setPost(post.filter((post)=>{return post.id != i}))
@@ -152,8 +161,8 @@ const handlesubmit=(event)=>{
               <p><strong>CityName:</strong>{` `+(item.address?.city || item.city)}</p>
               <p><strong>PhoneNo:</strong>{` `+ item.phone}</p>
               <p><strong>Email-Id:</strong>{` `+ item.email}</p>
-              <button className='btn btn-info' onClick={handleEdit}><strong>Edit</strong></button>
-              <button className='btn btn-danger' onClick={handleDelete(i)}><strong>Delete</strong></button>
+              <button className='btn btn-info' onClick={()=>handleEdit(i)}><strong>Edit</strong></button>
+              <button className='btn btn-danger' onClick={()=>handleDelete(i)}><strong>Delete</strong></button>
             
               </div>
         </div>
