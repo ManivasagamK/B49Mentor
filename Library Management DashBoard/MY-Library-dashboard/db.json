@@ -1,16 +1,36 @@
 {
   "book": [
     {
-      "id": "",
-      "title": "",
+      "id": "1",
+      "title": "AgniSiragu",
       "author": {
-        "name":"",
-        "birthdate":"",
-        "biography":""
+        "name": "Manivasagam",
+        "birthdate": "10/11/1997",
+        "biography": "Well known tamil poet"
       },
-      "ISBNnumber":"",
-      "Publication":""
+      "ISBNnumber": "1234",
+      "Publication": "Tamil Pathipagam"
+    },
+    {
+      "bookname": "Manivasagam",
+      "authorname": "asd",
+      "ISBNnumber": "12345",
+      "Publication": "10/11/2023",
+      "id": "EXgJNEE"
+    },
+    {
+      "bookname": "Manivasagam k",
+      "authorname": "asdf",
+      "ISBNnumber": "12345",
+      "Publication": "10/11/2023",
+      "id": "761A5Tt"
+    },
+    {
+      "bookname": "Kavithaigal",
+      "authorname": "KArthi",
+      "ISBNnumber": "3456",
+      "Publication": "10/11/2023",
+      "id": "sOn1PJ0"
     }
   ]
-  
 }
