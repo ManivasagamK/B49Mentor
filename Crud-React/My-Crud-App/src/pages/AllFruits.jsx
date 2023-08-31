@@ -3,7 +3,7 @@ import axios from 'axios';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { Button } from 'bootstrap';
+import  Button  from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import DeleteConfirmation from '../component/shared/DeleteConfirmation';
 
@@ -64,7 +64,7 @@ function AllFruits() {
         {allFruits.map((item)=>(
             <Col key={item.id}>
                 <Card>
-                    <Card.Img variant='top' src={item.imgUrl}/>
+                    <Card.Img className="img"variant='top' src={item.imgUrl}/>
                     <Card.Body>
                         <Card.Title>{item.name}</Card.Title>
                         <Card.Text>Quantity(Kg)-{item.quantity}</Card.Text>
