@@ -12,7 +12,7 @@ function Dashboard() {
   console.log(books);
   return (
     <>
-      <div className="container">
+      <div className="Card-container">
         <div className="CardGroup">
           <div className="card1">
               <div className="Card_header">Total Books</div>
@@ -27,15 +27,21 @@ function Dashboard() {
               <h1 className="Card_body">200</h1>
           </div>
         </div>
-        </div>
+      </div>
         <div className='book'>
           
-              {books.map((item)=>(
+              {books.map((item,index)=>(
               <ul className="list">
                 <div className="book_list"><strong>Book Name:</strong> {item?.title||item.bookname}</div>
+                <br/>
                 <div className="book_author"><strong>Author:</strong> {item.author?.name || item.authorname}</div>
+                <br/>
                 <div className="book_ISBN"><strong>ISBN:</strong> {item?.ISBNnumber}</div>
+                <br/>
                 <div className="book_Publication"><strong>Publication Date:</strong> {item.Publication}</div>
+                <br/>
+                <button className='btn btn-info'>Edit</button>
+                <button className='btn btn-danger'>Delete</button>
                 </ul>
                 ))}
           
