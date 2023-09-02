@@ -2,7 +2,9 @@ import {createSlice} from '@reduxjs/toolkit';
 
 export const ProductSlice = createSlice({
     name : 'Product',
-    initialState: 0,
+    initialState: {
+        cart:[]
+    },
     reducers: {
         increment: (state)=> state + 1,
         decrement: (state)=> state -1,
