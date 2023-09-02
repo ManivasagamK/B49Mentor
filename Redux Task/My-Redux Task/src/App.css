@@ -1,0 +1,15 @@
+body{
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
+}
+img{
+  width: 200px;
+}
+button{
+  font-weight: bolder;
+  margin: 3px;
+}
+button:hover{
+  background: rgb(47, 7, 156);
+}
