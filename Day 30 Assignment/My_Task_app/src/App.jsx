@@ -12,8 +12,8 @@ function App() {
   return (
     <>
       {/* <Axios/> */}
-      {/* <Axios1/> */}
-        <Crud/>
+      <Axios1/>
+      
     </>
   )
 }

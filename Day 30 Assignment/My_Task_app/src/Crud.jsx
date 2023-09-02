@@ -5,10 +5,10 @@ function Crud() {
     const[data,setData]= useState([]);
     const[forminput,setForminput]=useState({id:null,name:""});
     // const [editingid, setEditingId]=useState(null);
-
+console.log(forminput.name);
     const handleAdd=(event)=>{
         event.preventDefault();
-        const newitem = {id:Date.now(), forminput.name};
+        const newitem = {id:Date.now(), forminput,name};
         setData([...data, newitem]);
         setForminput({id:null,name:""});
         

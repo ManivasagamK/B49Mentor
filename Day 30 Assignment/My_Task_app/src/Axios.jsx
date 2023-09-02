@@ -3,7 +3,7 @@ import axios from 'axios'
 import './Axios.css'
 function Axios() {
     const [post, setPost] = useState([]);
-    console.log(post);
+    //console.log(post);
     
     useEffect(() => {
       axios.get("https://jsonplaceholder.typicode.com/users").then((data) => {
@@ -48,13 +48,7 @@ function Axios() {
 
 
 
-{/* <input
-  type='text'
-  id='name'
-  value={inputValues.name}
-  onChange={handleInputChange}
-  placeholder='Name'
-/> */}
+
 
 const handleInputChange = (event) => {
     const { id, value } = event.target;
@@ -77,7 +71,7 @@ const newData = {
 const handlesubmit=(event)=>{
   event.preventDefault();
 
-    setPost((prevPosts) => [...prevPosts, {newData}]);
+    setPost((prevPosts) => [...prevPosts, newData]);
     setInputValues({
       name: '',
       username: '',
@@ -90,8 +84,7 @@ const handlesubmit=(event)=>{
   
   };
   const handleEdit=(i)=>{
-    console.log(i)
-      // setPost(post.splice(i,0));
+      setPost(post.s)
       setInputValues({
         name: post[i].name,
         username: post[i].username, 
@@ -102,7 +95,7 @@ const handlesubmit=(event)=>{
         email: post[i].email});
   }
   const handleDelete=(i)=>{
-    // setPost(post.filter((post)=>{return post.id != i}))
+    setPost(post.filter(post[i]!= i))
   
   }
     return (
@@ -114,8 +107,7 @@ const handlesubmit=(event)=>{
         <input type='text' id='name' value={inputValues.name} onChange={(event)=>handleInputChange(event)} />
         </div>
         <br/>
-        {/* <label htmlFor='name'>Name:</label>
-        <input type='text' id='name'/> */}
+        
         <div className="input">
         <label htmlFor='username'>UserName:</label>
         <input type='text' id='username' value={inputValues.username} onChange={handleInputChange}/>

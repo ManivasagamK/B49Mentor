@@ -5,7 +5,7 @@ import "./Axios.css"
 function Axios1() {
   const [data, setData] = useState([]);
   const [formData, setFormData] = useState({ 
-name: '',
+  name: '',
   username: '',
   companyname: '',
   specialisation: '',
@@ -27,15 +27,15 @@ console.log(data)
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (item,index) => {
     e.preventDefault();
 
     try {
       if (editingId) {
-        await axios.put(`https://jsonplaceholder.typicode.com/users/${editingId}`, {formData});
+        await axios.put(`https://jsonplaceholder.typicode.com/users/${editingId}`, formData);
         fetchData();
       } else {
-        await axios.post(`https://jsonplaceholder.typicode.com/users`, {formData});
+        await axios.post(`https://jsonplaceholder.typicode.com/users`, formData);
         fetchData();
       }
 console.log(editingId);
@@ -53,9 +53,10 @@ console.log(formData)
     }
   };
 
-  const handleEdit = (item,id) => {
-    console.log(id)
+  const handleEdit = (item,index) => {
+    // console.log(item.id)
     setFormData({ 
+        id: index+1,
         name: item.name, 
         username: item.username, 
         specialisation:(item.company?.catchPhrase || item.specialisation),
@@ -63,11 +64,11 @@ console.log(formData)
         city:(item.address?.city || item.city),
         phone:item.phone,
         email: item.email});
-    setEditingId(id);
+    setEditingId(item.id);
   };
 
-  const handleDelete = async (id) => {
-    console.log(id);
+  const handleDelete = async (item,i) => {
+    console.log(item.id);
 
     try {
       await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`);
@@ -160,10 +161,11 @@ console.log(formData)
         <button type="submit">{editingId ? 'Update' : 'Add'}</button>
       </form>
       <ul>
-        {data.map((item,id) => (
+        {data.map((item,i) => (
              
            <div key={item.id} className='container'>
            <div className='card'>
+           <p><strong>Id:</strong>{` `+(item?.id ||i+1)}</p>
              <p><strong>Name:</strong>{` `+item.name}</p>
              <p><strong>UserName:</strong>{` `+ item.username}</p>
              <p><strong>Specialisation:</strong>{` `+(item.company?.catchPhrase || item.specialisation)}</p>
@@ -171,8 +173,8 @@ console.log(formData)
              <p><strong>CityName:</strong>{` `+(item.address?.city || item.city)}</p>
              <p><strong>PhoneNo:</strong>{` `+ item.phone}</p>
              <p><strong>Email-Id:</strong>{` `+ item.email}</p>
-            <button className="btn btn-info"onClick={() => handleEdit(item,id)}>Edit</button>
-            <button className="btn btn-danger"onClick={() => handleDelete(item,id)}>Delete</button>
+            <button className="btn btn-info"onClick={() => handleEdit(item,i)}>Edit</button>
+            <button className="btn btn-danger"onClick={() => handleDelete(item,i)}>Delete</button>
             </div>
         </div>
           

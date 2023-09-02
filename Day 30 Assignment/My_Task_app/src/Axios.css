@@ -70,6 +70,7 @@ button{
     color: black;
     background: rgb(207, 136, 49);
     display: block;
+    margin: 2px;
 }
 button:hover {
     background-color: royalblue;
