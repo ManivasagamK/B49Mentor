@@ -12,29 +12,8 @@ function Axios() {
       });
     }, []);
     
-  // console.log(post)
-  // const handleAdd=(event)=>{
-  //   event.preventDefault();
-  //   let nameInput = document.getElementById("name");
-  //   let userInput = document.getElementById("username");
-  //   let companyInput = document.getElementById("companyname");
-  //   let specInput = document.getElementById("specialisation");
-  //   let cityInput = document.getElementById("cityname");
-  //   let phoneInput = document.getElementById("phone");
-  //   let emailInput = document.getElementById("email");
-    
-  //   let name = nameInput.value.trim();
-  //   //console.log(name);
-  //   let username = userInput.value.trim();
-  //   let catchPhrase = specInput.value.trim();
-  //   let companyname = companyInput.value.trim();
-  //   let city = cityInput.value.trim();
-  //   let phone = phoneInput.value.trim();
-  //   let email = emailInput.value.trim();
-  //   const newdata ={name, username,companyname, catchPhrase,city,phone,email}
-  //   setPost((post)=>[...post, newdata]);
-    
-  // }
+  
+ 
   
   const [inputValues, setInputValues] = useState({
     name: '',
@@ -167,4 +146,4 @@ const handlesubmit=(event)=>{
   
 
 
-export default Axios
+export default Axios;
