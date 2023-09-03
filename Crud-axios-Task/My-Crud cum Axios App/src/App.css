@@ -1,0 +1,13 @@
+.btn-outline-info:hover {
+  color: #fff!important;
+}
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.cursor {
+  cursor: pointer;
+}

@@ -84,7 +84,7 @@ const handlesubmit=(event)=>{
   
   };
   const handleEdit=(i)=>{
-      setPost(post.s)
+      setPost((post)=>{return post.splice(i,1)})
       setInputValues({
         name: post[i].name,
         username: post[i].username, 

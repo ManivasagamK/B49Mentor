@@ -16,7 +16,7 @@ function Axios1() {
 console.log(data)
   useEffect(() => {
     fetchData();
-    axios.post("http://localhost:4000",data)
+   
   }, []);
 
   const fetchData = async () => {
@@ -128,7 +128,7 @@ console.log(formData)
         </div>
         <br/>
         <div className="input">
-        <label htmlFor='city'>cityName:</label>
+        <label htmlFor='city'>CityName:</label>
          <input
           type="text"
           id="city"
