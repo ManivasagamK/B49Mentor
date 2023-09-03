@@ -16,6 +16,7 @@ function Axios1() {
 console.log(data)
   useEffect(() => {
     fetchData();
+    axios.post("http://localhost:4000",data)
   }, []);
 
   const fetchData = async () => {
@@ -32,10 +33,10 @@ console.log(data)
 
     try {
       if (editingId) {
-        await axios.put(`https://jsonplaceholder.typicode.com/users/${editingId}`, formData);
+        await axios.put(`http://localhost:4000/${editingId}`, formData);
         fetchData();
       } else {
-        await axios.post(`https://jsonplaceholder.typicode.com/users`, formData);
+        await axios.post(`http://localhost:4000`, formData);
         fetchData();
       }
 console.log(editingId);
