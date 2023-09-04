@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Axios from './Axios'
 import Axios1 from './Axios1'
-import Crud from './Crud'
+//import Crud from './Crud'
 
 function App() {
  
