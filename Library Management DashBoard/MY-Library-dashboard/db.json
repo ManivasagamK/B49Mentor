@@ -4,19 +4,19 @@
       "id": "1",
       "title": "AgniSiragu",
       "author": {
-        "name": "Manivasagam",
-        "birthdate": "10/11/1997",
-        "biography": "Well known tamil poet"
+        "DoB": "12/05/1997"
       },
       "ISBNnumber": "1234",
-      "Publication": "Tamil Pathipagam"
+      "Publication": "Tamil Pathipagam",
+      "bookname": "Thiruvasagam"
     },
     {
       "bookname": "Manivasagam",
       "authorname": "asd",
       "ISBNnumber": "12345",
       "Publication": "10/11/2023",
-      "id": "EXgJNEE"
+      "id": "EXgJNEE",
+      "title": "very good boy"
     },
     {
       "bookname": "Manivasagam k",
