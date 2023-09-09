@@ -844,3 +844,12 @@ Output:
     product_color: "indigo",
   },
 ];
+
+Query 10: db.collection.deleteMany({"product_price":47})
+Output:
+[
+  {
+    acknowledged: true,
+    deletedCount: 2,
+  },
+];
