@@ -1,0 +1,463 @@
+1.Find all the topics and tasks which are thought in the month of October
+    Query: Task- db.getCollection("Task").find({"date":{$gte:ISODate("2020-10-01T00:00:00.000+0000"), $lte:ISODate("2020-10-31T00:00:00.000+0000")}})
+    Output:
+    {
+    "_id" : ObjectId("64ff21d68576a4df11c70556"),
+    "user_id" : "3",
+    "task" : true,
+    "date" : ISODate("2020-10-16T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff21d68576a4df11c70557"),
+    "user_id" : "4",
+    "task" : false,
+    "date" : ISODate("2020-10-29T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff21d68576a4df11c70558"),
+    "user_id" : "5",
+    "task" : true,
+    "date" : ISODate("2020-10-27T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff21d68576a4df11c70559"),
+    "user_id" : "2",
+    "task" : false,
+    "date" : ISODate("2020-10-17T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff21d68576a4df11c7055a"),
+    "user_id" : "1",
+    "task" : true,
+    "date" : ISODate("2020-10-19T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff22210fd65f79e4ce3686"),
+    "user_id" : "6",
+    "task" : false,
+    "date" : ISODate("2020-10-16T00:00:00.000+0000")
+}
+    Topics- db.getCollection("Topics").find({"Date":{$gte:ISODate("2020-10-01T00:00:00.000+0000"), $lte:ISODate("2020-10-31T00:00:00.000+0000")}})
+        Output:{
+    "_id" : ObjectId("64ff1bfca061620f497a79d4"),
+    "topic_title" : "Array",
+    "Date" : ISODate("2020-10-10T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff1bfca061620f497a79d5"),
+    "topic_title" : "Objects",
+    "Date" : ISODate("2020-10-23T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff1bfca061620f497a79d6"),
+    "topic_title" : "Functions",
+    "Date" : ISODate("2020-10-27T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff1bfca061620f497a79d7"),
+    "topic_title" : "Operators",
+    "Date" : ISODate("2020-10-11T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff1bfca061620f497a79d8"),
+    "topic_title" : "Event Handlers",
+    "Date" : ISODate("2020-10-17T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff1bfca061620f497a79d9"),
+    "topic_title" : "Crud",
+    "Date" : ISODate("2020-10-06T00:00:00.000+0000")
+}
+2.Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020
+   Query: db.getCollection("company_drives").find({"Date":{$gte:ISODate("2020-10-15T00:00:00.000+0000"), $lte:ISODate("2020-10-31T00:00:00.000+0000")}});
+    output:
+    {
+    "_id" : ObjectId("64ff24884ade3fbb7ef40254"),
+    "CompanyName" : "Zoho",
+    "userId" : "1",
+    "Date" : ISODate("2020-10-15T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef40255"),
+    "CompanyName" : "Zoho",
+    "userId" : "2",
+    "Date" : ISODate("2020-10-15T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef40256"),
+    "CompanyName" : "Zoho",
+    "userId" : "3",
+    "Date" : ISODate("2020-10-15T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef40257"),
+    "CompanyName" : "Amazon",
+    "userId" : "2",
+    "Date" : ISODate("2020-10-20T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef40258"),
+    "CompanyName" : "Amazon",
+    "userId" : "4",
+    "Date" : ISODate("2020-10-20T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef40259"),
+    "CompanyName" : "Amazon",
+    "userId" : "6",
+    "Date" : ISODate("2020-10-20T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef4025a"),
+    "CompanyName" : "Amazon",
+    "userId" : "1",
+    "Date" : ISODate("2020-10-20T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef4025b"),
+    "CompanyName" : "TCS",
+    "userId" : "6",
+    "Date" : ISODate("2020-10-17T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef4025c"),
+    "CompanyName" : "VVDN",
+    "userId" : "3",
+    "Date" : ISODate("2020-10-25T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef4025d"),
+    "CompanyName" : "VVDN",
+    "userId" : "5",
+    "Date" : ISODate("2020-10-25T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef4025e"),
+    "CompanyName" : "Flipkart",
+    "userId" : "2",
+    "Date" : ISODate("2020-10-30T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef4025f"),
+    "CompanyName" : "Flipkart",
+    "userId" : "3",
+    "Date" : ISODate("2020-10-30T00:00:00.000+0000")
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef40260"),
+    "CompanyName" : "Flipkart",
+    "userId" : "1",
+    "Date" : ISODate("2020-10-30T00:00:00.000+0000")
+}
+3.Find all the company drives and students who are appeared for the placement.
+Query:db.company_drives.aggregate([{
+   $lookup:{
+      from: "Users",
+       localField:"userId",
+            foreignField: "userid",
+            as: "UserInfo"
+   }
+}])
+Output:
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef40254"),
+    "CompanyName" : "Zoho",
+    "userId" : "1",
+    "Date" : ISODate("2020-10-15T00:00:00.000+0000"),
+    "UserInfo" : [
+        {
+            "_id" : ObjectId("64ff15600fd65f79e4ce3659"),
+            "userid" : "1",
+            "user_name" : "Mani"
+        }
+    ]
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef40255"),
+    "CompanyName" : "Zoho",
+    "userId" : "2",
+    "Date" : ISODate("2020-10-15T00:00:00.000+0000"),
+    "UserInfo" : [
+        {
+            "_id" : ObjectId("64ff15900fd65f79e4ce365a"),
+            "userid" : "2",
+            "user_name" : "john"
+        }
+    ]
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef40256"),
+    "CompanyName" : "Zoho",
+    "userId" : "3",
+    "Date" : ISODate("2020-10-15T00:00:00.000+0000"),
+    "UserInfo" : [
+        {
+            "_id" : ObjectId("64ff15b20fd65f79e4ce365b"),
+            "userid" : "3",
+            "user_name" : "Joseph"
+        }
+    ]
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef40257"),
+    "CompanyName" : "Amazon",
+    "userId" : "2",
+    "Date" : ISODate("2020-10-20T00:00:00.000+0000"),
+    "UserInfo" : [
+        {
+            "_id" : ObjectId("64ff15900fd65f79e4ce365a"),
+            "userid" : "2",
+            "user_name" : "john"
+        }
+    ]
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef40258"),
+    "CompanyName" : "Amazon",
+    "userId" : "4",
+    "Date" : ISODate("2020-10-20T00:00:00.000+0000"),
+    "UserInfo" : [
+        {
+            "_id" : ObjectId("64ff15be0fd65f79e4ce365c"),
+            "user_name" : "Mary",
+            "userid" : "4"
+        }
+    ]
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef40259"),
+    "CompanyName" : "Amazon",
+    "userId" : "6",
+    "Date" : ISODate("2020-10-20T00:00:00.000+0000"),
+    "UserInfo" : [
+        {
+            "_id" : ObjectId("64ff160a0fd65f79e4ce365e"),
+            "userid" : "6",
+            "user_name" : "Ruby"
+        }
+    ]
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef4025a"),
+    "CompanyName" : "Amazon",
+    "userId" : "1",
+    "Date" : ISODate("2020-10-20T00:00:00.000+0000"),
+    "UserInfo" : [
+        {
+            "_id" : ObjectId("64ff15600fd65f79e4ce3659"),
+            "userid" : "1",
+            "user_name" : "Mani"
+        }
+    ]
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef4025b"),
+    "CompanyName" : "TCS",
+    "userId" : "6",
+    "Date" : ISODate("2020-10-17T00:00:00.000+0000"),
+    "UserInfo" : [
+        {
+            "_id" : ObjectId("64ff160a0fd65f79e4ce365e"),
+            "userid" : "6",
+            "user_name" : "Ruby"
+        }
+    ]
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef4025c"),
+    "CompanyName" : "VVDN",
+    "userId" : "3",
+    "Date" : ISODate("2020-10-25T00:00:00.000+0000"),
+    "UserInfo" : [
+        {
+            "_id" : ObjectId("64ff15b20fd65f79e4ce365b"),
+            "userid" : "3",
+            "user_name" : "Joseph"
+        }
+    ]
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef4025d"),
+    "CompanyName" : "VVDN",
+    "userId" : "5",
+    "Date" : ISODate("2020-10-25T00:00:00.000+0000"),
+    "UserInfo" : [
+        {
+            "_id" : ObjectId("64ff15f80fd65f79e4ce365d"),
+            "userid" : "5",
+            "user_name" : "killer"
+        }
+    ]
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef4025e"),
+    "CompanyName" : "Flipkart",
+    "userId" : "2",
+    "Date" : ISODate("2020-10-30T00:00:00.000+0000"),
+    "UserInfo" : [
+        {
+            "_id" : ObjectId("64ff15900fd65f79e4ce365a"),
+            "userid" : "2",
+            "user_name" : "john"
+        }
+    ]
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef4025f"),
+    "CompanyName" : "Flipkart",
+    "userId" : "3",
+    "Date" : ISODate("2020-10-30T00:00:00.000+0000"),
+    "UserInfo" : [
+        {
+            "_id" : ObjectId("64ff15b20fd65f79e4ce365b"),
+            "userid" : "3",
+            "user_name" : "Joseph"
+        }
+    ]
+}
+{
+    "_id" : ObjectId("64ff24884ade3fbb7ef40260"),
+    "CompanyName" : "Flipkart",
+    "userId" : "1",
+    "Date" : ISODate("2020-10-30T00:00:00.000+0000"),
+    "UserInfo" : [
+        {
+            "_id" : ObjectId("64ff15600fd65f79e4ce3659"),
+            "userid" : "1",
+            "user_name" : "Mani"
+        }
+    ]
+}
+
+
+4.Find the number of problems solved by the user in codekata
+Query: db.getCollection("Users").aggregate([{
+    $lookup:{
+        from: "Codekata",
+        localField:"userid",
+        foreignField:"userid",
+        as: "Codekata_Report"
+    }}])
+Output:
+{
+    "_id" : ObjectId("64ff15600fd65f79e4ce3659"),
+    "userid" : "1",
+    "user_name" : "Mani",
+    "Codekata_Report" : [
+        {
+            "_id" : ObjectId("64ff18220fd65f79e4ce3669"),
+            "userid" : "1",
+            "Solved" : NumberInt(200)
+        }
+    ]
+}
+{
+    "_id" : ObjectId("64ff15900fd65f79e4ce365a"),
+    "userid" : "2",
+    "user_name" : "john",
+    "Codekata_Report" : [
+        {
+            "_id" : ObjectId("64ff18050fd65f79e4ce3666"),
+            "userid" : "2",
+            "Solved" : NumberInt(60)
+        }
+    ]
+}
+{
+    "_id" : ObjectId("64ff15b20fd65f79e4ce365b"),
+    "userid" : "3",
+    "user_name" : "Joseph",
+    "Codekata_Report" : [
+        {
+            "_id" : ObjectId("64ff181c0fd65f79e4ce3668"),
+            "userid" : "3",
+            "Solved" : NumberInt(2)
+        }
+    ]
+}
+{
+    "_id" : ObjectId("64ff15be0fd65f79e4ce365c"),
+    "user_name" : "Mary",
+    "userid" : "4",
+    "Codekata_Report" : [
+        {
+            "_id" : ObjectId("64ff17f50fd65f79e4ce3665"),
+            "userid" : "4",
+            "Solved" : NumberInt(10)
+        }
+    ]
+}
+{
+    "_id" : ObjectId("64ff15f80fd65f79e4ce365d"),
+    "userid" : "5",
+    "user_name" : "killer",
+    "Codekata_Report" : [
+        {
+            "_id" : ObjectId("64ff18110fd65f79e4ce3667"),
+            "userid" : "5",
+            "Solved" : NumberInt(42)
+        }
+    ]
+}
+{
+    "_id" : ObjectId("64ff160a0fd65f79e4ce365e"),
+    "userid" : "6",
+    "user_name" : "Ruby",
+    "Codekata_Report" : [
+        {
+            "_id" : ObjectId("64ff190a0fd65f79e4ce3670"),
+            "userid" : "6",
+            "Solved" : NumberInt(322)
+        }
+    ]
+}
+
+5.Find all the mentors with who has the mentee's count more than 15
+
+Query:db.getCollection("mentors").find({"mentee_count":{$gt:15}})
+Output:{
+    "_id" : ObjectId("64ff26334c29b2ff5ba1dd2c"),
+    "mentor_id" : "1",
+    "mentor_name" : "Manikandan",
+    "mentee_count" : NumberInt(100)
+}
+{
+    "_id" : ObjectId("64ff26334c29b2ff5ba1dd2d"),
+    "mentor_id" : "2",
+    "mentor_name" : "Manik",
+    "mentee_count" : NumberInt(123)
+}
+{
+    "_id" : ObjectId("64ff26334c29b2ff5ba1dd2e"),
+    "mentor_id" : "3",
+    "mentor_name" : "Mark",
+    "mentee_count" : NumberInt(35)
+}
+{
+    "_id" : ObjectId("64ff26334c29b2ff5ba1dd2f"),
+    "mentor_id" : "4",
+    "mentor_name" : "Azar",
+    "mentee_count" : NumberInt(47)
+}
+{
+    "_id" : ObjectId("64ff26334c29b2ff5ba1dd30"),
+    "mentor_id" : "5",
+    "mentor_name" : "Hari",
+    "mentee_count" : NumberInt(76)
+}
+{
+    "_id" : ObjectId("64ff26334c29b2ff5ba1dd31"),
+    "mentor_id" : "6",
+    "mentor_name" : "Sundar",
+    "mentee_count" : NumberInt(140)
+}
+{
+    "_id" : ObjectId("64ff26334c29b2ff5ba1dd32"),
+    "mentor_id" : "7",
+    "mentor_name" : "Manju",
+    "mentee_count" : NumberInt(84)
+}
+
+6. Find the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020
+Query:
+Output:
