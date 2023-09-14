@@ -41,7 +41,7 @@ app.get("/getFiles",(req,res)=>{
             return;
         }
         console.log(`List of Files: ${files}`);
-        const Textfiles = files.filter((file)=>path.extname === `.txt`);
+        const Textfiles = files.filter((file)=>path.extname(file) === ".txt");
             res.json(Textfiles);
     })
 })
