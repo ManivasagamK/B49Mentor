@@ -87,10 +87,10 @@ mani.post("/mentor/:mentorId/assign", async (req, res) => {
   });
   mani.get("/student/:studentId/pMentor", async (req, res) => {
     try {
-      const student = await Mentor.findById(req.params.studentId).populate(
+      const student = await Student.findById(req.params.studentId).populate(
         "pMentor"
       );
-      res.send(mentor.pMentor);
+      res.send(student.pMentor);
     } catch (error) {
       res.status(400).send(error);
     }
