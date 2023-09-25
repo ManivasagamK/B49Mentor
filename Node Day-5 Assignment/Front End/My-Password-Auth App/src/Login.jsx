@@ -53,8 +53,10 @@ function Login({ setToken }) {
             required></input>
         </div>
         <button type="submit">Login</button>
-        <div>Forget Password?</div>
+        {/* <button onClick={navigate("/resetpassword")}>Forget Password?</button> */}
+        <div> Forget Password ? <a href="/resetpassword">Click Here</a></div>
         <div>New User? <a href="/register">SignUp</a></div>
+
       </form>
     </div>
   );

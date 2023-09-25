@@ -66,6 +66,19 @@ app.get("/api/protected", (req, res) => {
   res.json({ message: "Protected resource accessed successfully!!" });
 });
 
+app.put("/api/resetpassword", async (req, res) => {
+  try {
+    const { username, password } = req.body;
+    const User = await UserModel.findOne({ username })
+    console.log(User)
+    User.password = { password };
+    await User.save();
+    res.status(200).json({message: "Password Reset Successfully"})
+  } catch (error) {
+    res.status(401).json({message: "Enter a Valid Password"})
+  }
+ 
+})
 app.listen(PORT, () => {
   console.log("Server is running on PORT:", PORT);
 });
