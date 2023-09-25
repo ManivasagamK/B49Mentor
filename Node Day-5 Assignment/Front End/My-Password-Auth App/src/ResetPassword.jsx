@@ -1,14 +1,15 @@
 import React,{useState} from 'react'
 
 function ResetPassword() {
-    onst [newpassword, setNewpassword] = useState({
+    const [newpassword, setNewpassword] = useState({
         username: "",
         password: ""
       });
       const [cnfmpassword, setCnfmpassword] = useState({ cnformpassword: "" });
     
-      const handleChange = (e) = {
-       setNewpasswrd({...newpassword, [e.target.name]: e.target.value})
+    const handleChange = (e) = {
+        setNewpasswrd({ ...newpassword, [e.target.name]: e.target.value
+    });
         }
       return (
         <>
@@ -56,5 +57,5 @@ function ResetPassword() {
           </div>
         </>
       )
-    }
-export default ResetPassword
+      }
+export default ResetPassword;
