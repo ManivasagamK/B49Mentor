@@ -11,7 +11,7 @@ const mani = express();
 
 const PORT = 5000;
 const DB_URL =
-  "mongodb+srv://manivasagam:8778421906Mk@mentorandstudent.itu531b.mongodb.net/";
+  "mongodb+srv://manivasagam:8778421906Mk@mentorandstudent.itu531b.mongodb.net/assignmentor";
 
 mani.use(bodyparser.json());
 

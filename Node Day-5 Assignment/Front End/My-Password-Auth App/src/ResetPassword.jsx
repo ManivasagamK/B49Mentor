@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function ResetPassword() {
@@ -10,37 +9,35 @@ function ResetPassword() {
   const [confrmpassword, setConfrmpassword] = useState({
     cnfrmpw: "",
   });
-  const navigate = useNavigate();
   const handleChange = (e) => {
     setNewpassword({ ...newpassword, [e.target.name]: e.target.value });
-    };
-    const handlecnfrmpassword = (e) => {
-        setConfrmpassword({ ...confrmpassword, [e.target.name]: e.target.value })
-    }
-    const handleSubmit = (e) => {
-        e.preventDefault();
+  };
+  const handlecnfrmpassword = (e) => {
+    setConfrmpassword({ ...confrmpassword, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-        if (newpassword.password === confrmpassword.cnfrmpw) {
-            axios.put("http://localhost:3002/api/resetpassword", newpassword);
-            
-        } else {
-            alert("Both new password and conformation password should be same")
-        }
-}
+    if (newpassword.password === confrmpassword.cnfrmpw) {
+      axios.put("http://localhost:3002/api/resetpassword", newpassword);
+    } else {
+      alert("Both new password and conformation password should be same");
+    }
+  };
   return (
     <>
       <h1>ForgetPassword</h1>
       <div>
         <form onSubmit={handleSubmit}>
           <div>
-            <lable htmlfor="username">Email-id:</lable>
+            <lable htmlFor="username">Email-id:</lable>
             <input
               type="text"
               name="username"
               id="username"
               onChange={handleChange}
               value={newpassword.username}
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              
               required
             />
           </div>
@@ -68,10 +65,12 @@ function ResetPassword() {
               title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
             />
           </div>
-                  <button type="submit">Save & Submit</button>
-              </form>
-              {/* <button onClick={navigate("/login")}>Cancel</button> */}
-              <div>Cancel <a href="/login">Click here</a></div>
+          <button type="submit">Save & Submit</button>
+        </form>
+        {/* Navigate to login on cancel */}
+        <div>
+          Cancel <a href="/login">Click here</a>
+        </div>
       </div>
     </>
   );

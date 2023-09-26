@@ -71,7 +71,9 @@ app.put("/api/resetpassword", async (req, res) => {
     const { username, password } = req.body;
     const User = await UserModel.findOne({ username })
     console.log(User)
-    User.password = { password };
+    const hashpassword = await bcrypt.hash(password, 12);
+
+    User.password =  hashpassword;
     await User.save();
     res.status(200).json({message: "Password Reset Successfully"})
   } catch (error) {
