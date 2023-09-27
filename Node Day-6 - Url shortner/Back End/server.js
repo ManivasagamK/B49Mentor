@@ -9,9 +9,8 @@ const app = express();
 
 dotenv.config();
 
-const PORT = 3008;
-const DB_URL =
-  "mongodb+srv://manivasagam:8778421906Mk@mentorandstudent.itu531b.mongodb.net/urlShortner";
+const PORT = process.env.PORT;
+const DB_URL = process.env.DB_URL;
 
 // Connecting  MongoDB
 mongoose

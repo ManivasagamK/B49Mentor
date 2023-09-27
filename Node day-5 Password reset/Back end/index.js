@@ -4,14 +4,15 @@ import bodyParser from "body-parser";
 import nodemailer from "nodemailer";
 import crypto from "crypto";
 import mongoose from "mongoose";
-
+import dotenv from "dotenv"
+dotenv().config();
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 const DB_URL =
-  "mongodb+srv://manivasagam:8778421906Mk@mentorandstudent.itu531b.mongodb.net/passwordresetdb";
+  process.env.DB_URL;
 // const router = express.Router();
-const PORT = 3009;
+const PORT = process.env.PORT;
 // MongoDB setup
 mongoose.connect(
   DB_URL,
@@ -28,7 +29,7 @@ const User = mongoose.model("User", {
 const transporter = nodemailer.createTransport({
     service: "gmail",
   auth: {
-    user: "manivasagam55555@gmail.com",
+    user: "",
     pass: "",
   },
 });
