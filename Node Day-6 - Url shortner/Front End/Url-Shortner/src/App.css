@@ -1,0 +1,23 @@
+body{
+  justify-content: right;
+  align-items: center;
+ 
+  font-family: Arial, Helvetica, sans-serif;
+line-height: 1;
+}
+button{
+  display: inline;
+  margin: 2px 4px;
+  height: 40px;
+  color: rgb(3, 18, 18);
+  background-color: rgb(236, 229, 229);
+  border: 2px solid rgb(63, 236, 24);
+  
+}
+table{
+  border: 2px solid rgb(13, 195, 215);
+}
+#url{
+  width: 300px;
+  overflow: auto;
+}

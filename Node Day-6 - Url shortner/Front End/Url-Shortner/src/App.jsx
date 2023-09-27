@@ -2,7 +2,7 @@ import { BrowserRouter, Route,BrowserRouter as Router, Routes } from "react-rout
 import Login from "./Components/Login";
 import Dashboard from "./Components/Dashboard";
 import Signup from "./Components/Signup";
-
+import "./App.css"
 function App() {
   return (
     <>

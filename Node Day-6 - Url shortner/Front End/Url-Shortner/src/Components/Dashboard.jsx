@@ -108,10 +108,9 @@ const Dashboard = () => {
           <tbody>
             {urls.map((url, index) => (
               <tr key={index}>
-                <td>{url.longUrl}</td>
-                <a href={url.longUrl} target="_blank" rel="noopener noreferrer">
-                  {url.shortUrl}
-                </a>
+                <td id="url">{url.longUrl}</td>
+                <td><a href={url.longUrl} target="_blank" rel="noopener noreferrer">
+                  {url.shortUrl}</a></td>
                 <td>{url.clickCount}</td>
               </tr>
             ))}
