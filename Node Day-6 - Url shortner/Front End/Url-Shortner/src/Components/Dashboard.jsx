@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
+import { useNavigate,Link } from "react-router-dom";
+
 
 
 const Dashboard = () => {
@@ -117,6 +119,7 @@ const Dashboard = () => {
           </tbody>
         </table>
       </div>
+      <button ><Link to="/">Logout</Link></button>
     </Container>
   );
 };
