@@ -1,10 +1,17 @@
-import express from "express";
-import cors from "cors";
-import bodyParser from "body-parser";
-import nodemailer from "nodemailer";
-import crypto from "crypto";
-import mongoose from "mongoose";
-import dotenv from "dotenv";
+
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const nodemailer = require("nodemailer");
+const crypto = require("crypto");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+// import cors from "cors";
+// import bodyParser from "body-parser";
+// import nodemailer from "nodemailer";
+// import crypto from "crypto";
+// import mongoose from "mongoose";
+// import dotenv from "dotenv";
 dotenv.config();
 const app = express();
 app.use(bodyParser.json());
