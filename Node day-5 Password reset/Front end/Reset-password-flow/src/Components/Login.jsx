@@ -42,7 +42,7 @@ function Login() {
   return (
     <Container>
       <h1>
-        Since chrome marked this site as dangerous, check spam mail for links
+        Password_reset Flow
       </h1>
       <h2>Welcome Back! Please Login to continue</h2>
       <Form>
