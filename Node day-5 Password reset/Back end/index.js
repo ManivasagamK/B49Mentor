@@ -4,21 +4,19 @@ import bodyParser from "body-parser";
 import nodemailer from "nodemailer";
 import crypto from "crypto";
 import mongoose from "mongoose";
-import dotenv from "dotenv"
-dotenv().config();
+import dotenv from "dotenv";
+dotenv.config();
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
-const DB_URL =
-  process.env.DB_URL;
+const DB_URL = process.env.DB_URL;
 // const router = express.Router();
 const PORT = process.env.PORT;
 // MongoDB setup
-mongoose.connect(
-  DB_URL,
-  { useNewUrlParser: true, useUnifiedTopology: true }
-).then(() => console.log("Connected to MongoDB"))
-.catch((err) => console.log("Could not connect to MongoDB", err));
+mongoose
+  .connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.log("Could not connect to MongoDB", err));
 const User = mongoose.model("User", {
   email: String,
   password: String,
@@ -27,10 +25,10 @@ const User = mongoose.model("User", {
 
 // Nodemailer setup
 const transporter = nodemailer.createTransport({
-    service: "gmail",
+  service: "gmail",
   auth: {
-    user: "",
-    pass: "",
+    user: process.env.user,
+    pass: process.env.pass,
   },
 });
 
@@ -78,17 +76,17 @@ app.post("/forgot-password", async (req, res) => {
 
   // Generate a random token
   const token = crypto.randomBytes(20).toString("hex");
-console.log(token)
+  console.log(token);
   // Store the token in the database
   user.resetToken = token;
   await user.save();
 
   // Send an email with the reset password link
-    const mailoptions = {
-    from: 'manivasagam55555@gmail.com',
+  const mailoptions = {
+    from: process.env.user,
     to: email,
     subject: "Password Reset",
-    text: `To reset your password, click on this link: http://localhost:3009/reset-password/${token}`,
+    text: `To reset your password, click on this link: http://localhost:5173/reset-password/${token}`,
   };
 
   transporter.sendMail(mailoptions, (error) => {
@@ -152,5 +150,5 @@ app.post("/reset-password/:token", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log( `Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
