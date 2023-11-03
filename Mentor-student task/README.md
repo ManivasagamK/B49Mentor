@@ -61,3 +61,8 @@ This API endpoint retrieves a list of all previously assigned mentor for a parti
 ## GitHub Repository
 
 - **URL:** [https://github.com/ManivasagamK/Guvi-B49-Mani/tree/f2a029d05710c7946fb616bab8ea666ddcb18688/Mentor-student%20task](https://github.com/ManivasagamK/Guvi-B49-Mani/tree/f2a029d05710c7946fb616bab8ea666ddcb18688/Mentor-student%20task)
+
+https://documenter.getpostman.com/view/29696901/2s9YXe7ipB
+## API Documentation
+
+- **URL:** [https://documenter.getpostman.com/view/29696901/2s9YXe7ipB](https://documenter.getpostman.com/view/29696901/2s9YXe7ipB)
