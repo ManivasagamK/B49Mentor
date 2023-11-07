@@ -1,0 +1,22 @@
+
+.container .navbar-course p{
+  padding: 5px;
+  font-weight: bold;
+  color: rgb(232, 222, 222);
+  overflow: hidden;
+  background-color: #333;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin-top: 70px;
+  margin-left: 60px;
+}
+
+.container .navbar-all p{
+color: rgb(217, 79, 79);
+margin-right: 40px;
+}
+.navbar :checked{
+color: blue;
+border-bottom: 1px solid green;
+}
