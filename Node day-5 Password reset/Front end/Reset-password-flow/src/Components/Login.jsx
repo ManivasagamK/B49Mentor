@@ -18,7 +18,7 @@ function Login() {
 
     // Make a POST request to your backend '/login' endpoint with email and password
     try {
-      const response = await fetch("http://localhost:3009/login", {
+      const response = await fetch("https://password-reset-flow-api-ghcr.onrender.com/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

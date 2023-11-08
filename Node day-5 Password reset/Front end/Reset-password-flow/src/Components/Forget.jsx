@@ -18,7 +18,7 @@ function Forget() {
 
     try {
       const response = await fetch(
-        "http://localhost:3009/forgot-password",
+        "https://password-reset-flow-api-ghcr.onrender.com/forgot-password",
         {
           method: "POST",
           headers: {

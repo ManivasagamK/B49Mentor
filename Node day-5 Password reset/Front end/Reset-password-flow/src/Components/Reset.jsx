@@ -21,7 +21,7 @@ function Reset() {
 
     try {
       const response = await fetch(
-        `http://localhost:3009/reset-password/${token}`,
+        `https://password-reset-flow-api-ghcr.onrender.com/reset-password/${token}`,
         {
           method: "POST",
           headers: {

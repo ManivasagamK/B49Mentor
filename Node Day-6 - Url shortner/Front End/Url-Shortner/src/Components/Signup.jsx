@@ -20,7 +20,7 @@ const Signup = () => {
     console.log(formData);
     try {
       const response = await fetch(
-        "http://localhost:3008/api/users/signup",
+        "https://urlshortnerapi.onrender.com/api/users/signup",
         {
           method: "POST",
           headers: {
