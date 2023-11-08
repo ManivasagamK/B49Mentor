@@ -47,7 +47,7 @@ const Dashboard = () => {
   const handleShorten = async () => {
     try {
       const response = await fetch(
-        "http://localhost:3008/api/urlshort/shorten",
+        "https://urlshortnerapi.onrender.com/api/urlshort/shorten",
         {
           method: "POST",
           headers: {
