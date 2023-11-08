@@ -16,7 +16,7 @@ const Dashboard = () => {
     async function fetchStatistics() {
       try {
         const response = await fetch(
-          "http://localhost:3008/api/urlshort/statistics"
+          "https://urlshortnerapi.onrender.com/api/urlshort/statistics"
         )
         const data = await response.json();
         const { urlsPerDay, urlsPerMonth, clickCounts } = data;
