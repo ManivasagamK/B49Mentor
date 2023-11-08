@@ -5,7 +5,7 @@ import Modal from 'react-modal';
 function Authordetail() {
   let [books, setBooks] =useState([])
   useEffect(()=>{
-    axios.get("http://localhost:4000/book").then((res)=>{
+    axios.get("https://formikbackenddata.onrender.com/book").then((res)=>{
       setBooks(res.data) ;
     }).catch(error=>{alert('Error:',error)})
   },[])
@@ -27,7 +27,7 @@ function Authordetail() {
   // Function to handle the "Save" button click inside the modal
   const handleSave = () => {
     // Send a PUT request to update the book on the server
-    axios.put(`http://localhost:4000/book/${editedBook.id}`, editedBook)
+    axios.put(`https://formikbackenddata.onrender.com/book/${editedBook.id}`, editedBook)
       .then((response) => {
         console.log('Book updated successfully:', response.data);
         
@@ -49,7 +49,7 @@ function Authordetail() {
 
   const handleDelete = (index) => {
     const bookToDelete = books[index];
-    axios.delete(`http://localhost:4000/book/${bookToDelete.id}`)
+    axios.delete(`https://formikbackenddata.onrender.com/book/${bookToDelete.id}`)
       .then(() => {
         // Remove the deleted book from the state
         const updatedBooks = [...books];
