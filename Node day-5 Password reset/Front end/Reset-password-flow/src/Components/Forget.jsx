@@ -70,3 +70,4 @@ function Forget() {
   );
 }
 
+export default Forget;
