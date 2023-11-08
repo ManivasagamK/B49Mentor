@@ -1,0 +1,50 @@
+{
+    "book": [
+      {
+        "id": "1",
+        "title": "AgniSiragu",
+        "author": {
+          "DoB": "12/05/1997"
+        },
+        "ISBNnumber": "1234",
+        "Publication": "Tamil Pathipagam",
+        "bookname": "Thiruvasagam"
+      },
+      {
+        "bookname": "Manivasagam",
+        "authorname": "asd",
+        "ISBNnumber": "12345",
+        "Publication": "10/11/2023",
+        "id": "EXgJNEE",
+        "title": "very good boy"
+      },
+      {
+        "bookname": "Manivasagam k",
+        "authorname": "asdf",
+        "ISBNnumber": "12345",
+        "Publication": "10/11/2023",
+        "id": "761A5Tt"
+      },
+      {
+        "bookname": "Kavithaigal",
+        "authorname": "KArthi",
+        "ISBNnumber": "3456",
+        "Publication": "10/11/2023",
+        "id": "sOn1PJ0"
+      },
+      {
+        "bookname": "Sindhanai Siragugal",
+        "authorname": "Gayathri",
+        "ISBNnumber": "12367",
+        "Publication": "10/05/2023",
+        "id": "XNjYfRJ"
+      },
+      {
+        "bookname": "Malai malar",
+        "authorname": "Guna",
+        "ISBNnumber": "34556",
+        "Publication": "10/05/2023",
+        "id": "rf91XU2"
+      }
+    ]
+  }
