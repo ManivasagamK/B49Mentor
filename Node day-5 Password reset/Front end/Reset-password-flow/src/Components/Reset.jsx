@@ -51,8 +51,9 @@ function Reset() {
     <div>
       <h2>Reset Password</h2>
       <form onSubmit={handleResetPassword}>
-        <label>New Password:</label>
+        <label htmlFor="newpassword">New Password:</label>
         <input
+          id="newpassword"
           type="password"
           value={newPassword}
           onChange={(e) => setNewPassword(e.target.value)}

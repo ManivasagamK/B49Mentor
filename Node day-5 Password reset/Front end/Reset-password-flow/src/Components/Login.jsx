@@ -43,7 +43,7 @@ function Login() {
   return (
     <Container>
       <h1>
-        Password_reset Flow
+        Password Reset Flow
       </h1>
       <h2>Welcome Back! Please Login to continue</h2>
       <Form>
@@ -83,10 +83,10 @@ function Login() {
             </Button>
           </Modal.Footer>
         </Modal>
-        <p>
-          <a href="/forgot">Forgot Password</a>
-        </p>
-        <p>New User Wanna Signup?</p>
+        <div>
+          <Button variant="primary" onClick={() => navigate("/forgot")}>Forgot Password</Button>
+        </div>
+        <p><b>New User Wanna Signup?</b></p>
         <Button variant="danger" onClick={() => navigate("/signup")}>
           Signup
         </Button>
