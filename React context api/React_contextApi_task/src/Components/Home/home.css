@@ -1,0 +1,44 @@
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-evenly;
+    margin: 3rem;
+}
+
+.product-container{
+    height: 350px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 0.3rem;
+}
+
+.product-image{
+    height: 50%;
+    width: 100%;
+}
+
+.product-details{
+    height: 35%;
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.product-footer{
+    height: 15%;
+    width: 100%;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    padding: 5px;
+}
+
+.name{
+    color: black;
+    text-align: start;
+}

@@ -1,0 +1,32 @@
+.cartCard{
+    min-height: 13rem;
+}
+
+.cartRow{
+    min-height: 100%;
+}
+
+.imageCard{
+    min-height: 13rem;
+    object-fit: fill;
+}
+
+.cartBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.quantityCount{
+    display: flex;
+    gap: 0.5em;
+}
+
+.cartRemove{
+    cursor: pointer;
+    margin-left: 1em;
+    color: rgb(152, 36, 36);
+    font-weight: bold;
+}

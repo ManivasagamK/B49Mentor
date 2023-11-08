@@ -1,0 +1,11 @@
+.pImage{
+    height: 15rem;
+}
+
+.pBody{
+    min-height: 13rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
