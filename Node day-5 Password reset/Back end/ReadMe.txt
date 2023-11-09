@@ -1,8 +1,8 @@
-github link FrontENd: https://github.com/ManivasagamK/Guvi-B49-Mani/tree/f6fbfe3d651b6c57da573c846d380d5ad1776220/Node%20day-5%20Password%20reset/Front%20end/Reset-password-flow
-github link BackENd: https://github.com/ManivasagamK/Guvi-B49-Mani/tree/f6fbfe3d651b6c57da573c846d380d5ad1776220/Node%20day-5%20Password%20reset/Back%20end
-
-netlify :https://65152d36c027bd63a4b43aa0--elaborate-semolina-4ec5e6.netlify.app/
-Render deployed link: https://password-reset-flow-api-ghcr.onrender.com
+Nodejs- Day -5: Authentication
+Front End Source Code: https://github.com/ManivasagamK/Guvi-B49-Mani/tree/c4555536f493fd2556110185cd6e3e8690013e58/Node%20day-5%20Password%20reset/Front%20end/Reset-password-flow
+Front End Deployed URL: https://visionary-torrone-18b3f0.netlify.app
+Back End Source Code: https://github.com/ManivasagamK/Guvi-B49-Mani/tree/c4555536f493fd2556110185cd6e3e8690013e58/Node%20day-5%20Password%20reset/Back%20end
+Back End Deployed URL: https://password-reset-flow-api-ghcr.onrender.com
 endpoints: 
         1. /signup - post
         2. /login - post
